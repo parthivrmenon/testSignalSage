@@ -8,3 +8,7 @@ spec:
       app: test
   endpoints:
   - port: test
+    metricRelabelings:
+    - sourceLabels: [__name__]
+      regex: 'probe_failed_due_to_regex'
+      action: drop
