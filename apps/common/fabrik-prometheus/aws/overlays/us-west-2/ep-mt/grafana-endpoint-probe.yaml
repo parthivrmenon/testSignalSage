@@ -8,3 +8,7 @@ spec:
       app: test
   endpoints:
   - port: test
+    metricRelabelings:
+    - sourceLabels: [__name__]
+      regex: 'probe_http_duration_seconds'
+      action: drop
