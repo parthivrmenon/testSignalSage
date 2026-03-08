@@ -8,3 +8,11 @@ spec:
       app: test
   endpoints:
   - port: test
+    interval: 30s
+    scrapeTimeout: 10s
+    metricsPath: /metrics
+    scheme: http
+    relabelConfigs:
+    - sourceLabels: [__name__]
+      action: keep
+      regex: !(probe_failed_due_to_regex)
