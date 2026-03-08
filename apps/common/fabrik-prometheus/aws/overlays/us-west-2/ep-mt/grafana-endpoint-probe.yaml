@@ -1,0 +1,10 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: test
+spec:
+  selector:
+    matchLabels:
+      app: test
+  endpoints:
+  - port: test
